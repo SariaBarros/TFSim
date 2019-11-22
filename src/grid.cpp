@@ -25,7 +25,7 @@ void grid::Resize( int rows, int cols )
 
     for( int kcol = 0; kcol < newCols; kcol++ )
     {
-        append_header(std::to_string(kcol), 200);
+        append_header(std::to_string(kcol), 2);//aqui era 200
         column_at(kcol).width(40);
     }
 

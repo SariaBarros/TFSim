@@ -39,6 +39,7 @@ int sc_main(int argc, char *argv[])
     listbox rob(fm);
     menubar mnbar(fm);
     button botao(fm);
+    button cycles_control(fm); //Instanciando o botão de controle de ciclos
     button clock_control(fm);
     button exit(fm);
     group clock_group(fm);
@@ -52,10 +53,11 @@ int sc_main(int argc, char *argv[])
     map<string,int> instruct_time{{"DADD",4},{"DADDI",4},{"DSUB",6},{"DSUBI",6},{"DMUL",10},{"DDIV",16},{"MEM",2}};
     top top1("top");
     botao.caption("START");
+    cycles_control.caption("DO N CYCLES"); //Nomeando o novo botão
     clock_control.caption("NEXT CYCLE");
     exit.caption("EXIT");
     plc["rst"] << table;
-    plc["btns"] << botao << clock_control << exit;
+    plc["btns"] << botao << cycles_control << clock_control << exit; //Colocado botão na interface
     plc["memor"] << memory;
     plc["regs"] << reg;
     plc["rob"] << rob;
@@ -561,6 +563,11 @@ int sc_main(int argc, char *argv[])
         else
             show_message("Fila de instruções vazia","A fila de instruções está vazia. Insira um conjunto de instruções para iniciar.");
     });
+    //Evento do Botão
+    //cycles_control.events().click([]
+    //{
+        
+    //}
     clock_control.events().click([]
     {
         if(sc_is_running())

@@ -564,10 +564,23 @@ int sc_main(int argc, char *argv[])
             show_message("Fila de instruções vazia","A fila de instruções está vazia. Insira um conjunto de instruções para iniciar.");
     });
     //Evento do Botão
-    //cycles_control.events().click([]
-    //{
-        
-    //}
+ 
+    cycles_control.events().click([&fm]
+    {   
+        int n=0; 
+        inputbox ibox(fm,"","Inserir N");
+        inputbox::integer a("N: ", n,1,10,1);
+      
+        if(ibox.show_modal(a))
+        {
+            n = a.value();
+        }
+        fm.show();
+
+        for(int i= 0; i<n; i++){
+            sc_start();
+        }
+    });
     clock_control.events().click([]
     {
         if(sc_is_running())

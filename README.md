@@ -1,3 +1,9 @@
+#Alunos:
+Sandy Vitória Barros Ricardo
+Mateus da Silva Almeida
+
+
+
 # TFSim
 
 Event-driven simulation of the Tomasulo Algorithm using the C++ interface SystemC, with a complete GUI.

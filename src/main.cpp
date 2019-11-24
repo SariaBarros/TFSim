@@ -540,12 +540,14 @@ int sc_main(int argc, char *argv[])
         }
     }
     clock_control.enabled(false);
+    cycles_control.enabled(false);
     botao.events().click([&]
     {
         if(fila)
         {
             botao.enabled(false);
             clock_control.enabled(true);
+            cycles_control.enabled(true); //atenção
             //Desativa os menus apos inicio da execucao
             op.enabled(0,false);
             op.enabled(1,false);
@@ -567,8 +569,7 @@ int sc_main(int argc, char *argv[])
  
     cycles_control.events().click([&fm]
     {   
-        int n=0; // N é o número de ciclos que o programa vai excecutar de maneira automática; 
-
+    
         if(sc_is_running()){ // Botão só permite evento quando o START é acionado;
 
             int n=0; // N é o número de ciclos que o programa vai excecutar de maneira automática; 

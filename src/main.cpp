@@ -573,7 +573,7 @@ int sc_main(int argc, char *argv[])
         if(sc_is_running()){ // Botão só permite evento quando o START é acionado;
 
             int n=0; // N é o número de ciclos que o programa vai excecutar de maneira automática; 
-            inputbox ibox(fm,"","Inserir N"); // Inicialização de uma caixa de texto para a definição do valor N;
+            inputbox ibox(fm,"","Insert N"); // Inicialização de uma caixa de texto para a definição do valor N;
             inputbox::integer a("N: ", n,1,100,1); // Usuário insere o valor de N;
           
             if(ibox.show_modal(a))

@@ -1,8 +1,3 @@
-#Alunos:
-Sandy Vitória Barros Ricardo
-Mateus da Silva Almeida
-
-
 
 # TFSim
 
